@@ -14,6 +14,9 @@
 		71463C33711237A6D38D3F04 /* libPods-LittleLeaf-LittleLeafTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C27CB589DEC17578A554C190 /* libPods-LittleLeaf-LittleLeafTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		DD037577CBE6D0EAD4E04250 /* libPods-LittleLeaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E21B8708E0F5FD4EF74F317 /* libPods-LittleLeaf.a */; };
+		3ACA4F9558D448C7BA43F9DC /* LibreCaslonText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE57BADD45654361AA5CAECC /* LibreCaslonText-Bold.ttf */; };
+		720CD3CE0DBA401482A17607 /* LibreCaslonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E413226FE59C494097A57D74 /* LibreCaslonText-Italic.ttf */; };
+		167F5F7C323E4B24B8CD6BBD /* LibreCaslonText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 418BB3C721284584886E4C05 /* LibreCaslonText-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		C27CB589DEC17578A554C190 /* libPods-LittleLeaf-LittleLeafTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LittleLeaf-LittleLeafTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA80E486B63209945310966B /* Pods-LittleLeaf-LittleLeafTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittleLeaf-LittleLeafTests.release.xcconfig"; path = "Target Support Files/Pods-LittleLeaf-LittleLeafTests/Pods-LittleLeaf-LittleLeafTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FE57BADD45654361AA5CAECC /* LibreCaslonText-Bold.ttf */ = {isa = PBXFileReference; name = "LibreCaslonText-Bold.ttf"; path = "../assets/fonts/LibreCaslonText-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E413226FE59C494097A57D74 /* LibreCaslonText-Italic.ttf */ = {isa = PBXFileReference; name = "LibreCaslonText-Italic.ttf"; path = "../assets/fonts/LibreCaslonText-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		418BB3C721284584886E4C05 /* LibreCaslonText-Regular.ttf */ = {isa = PBXFileReference; name = "LibreCaslonText-Regular.ttf"; path = "../assets/fonts/LibreCaslonText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				266518D46AD282B21A1AC0BC /* Pods */,
+				1739D6928B57439080863F9B /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +155,17 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		1739D6928B57439080863F9B /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				FE57BADD45654361AA5CAECC /* LibreCaslonText-Bold.ttf */,
+				E413226FE59C494097A57D74 /* LibreCaslonText-Italic.ttf */,
+				418BB3C721284584886E4C05 /* LibreCaslonText-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +263,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				3ACA4F9558D448C7BA43F9DC /* LibreCaslonText-Bold.ttf in Resources */,
+				720CD3CE0DBA401482A17607 /* LibreCaslonText-Italic.ttf in Resources */,
+				167F5F7C323E4B24B8CD6BBD /* LibreCaslonText-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

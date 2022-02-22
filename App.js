@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import styles from './LittleLeaf/styles.js';
 
 const App = () => {
   return (
@@ -9,9 +10,9 @@ const App = () => {
 		marginTop: "25%",
 		marginLeft: "10%",
         justifyContent: "flex-start",
-        alignItems: "flex-start"
+        alignItems: "flex-start",
       }}>
-      <Text>Home</Text>
+      <Text style={styles.titleText}>Home</Text>
     </View>
   )
 }
