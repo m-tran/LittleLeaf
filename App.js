@@ -7,13 +7,13 @@ const App = () => {
     <View
       style={{
         flex: 1,
-		marginTop: "25%",
-		marginLeft: "10%",
+        marginTop: "25%",
+        marginLeft: "10%",
         justifyContent: "flex-start",
         alignItems: "flex-start",
       }}>
       <Text style={styles.titleText}>Home</Text>
-	  <Text style={styles.baseText}>Add Plant</Text>
+	    <Text style={styles.baseText}>Add Plant</Text>
     </View>
   )
 }
