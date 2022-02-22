@@ -3,7 +3,7 @@ import theme from '../LittleLeaf/styles/theme.style';
 
 export default StyleSheet.create({
 	baseText: {
-		fontFamily: "LibreCaslonText-Bold",
+		fontFamily: "Inter-SemiBold"
 	},
 	titleText: {
 		fontFamily: "LibreCaslonText-Bold",

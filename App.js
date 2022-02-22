@@ -13,6 +13,7 @@ const App = () => {
         alignItems: "flex-start",
       }}>
       <Text style={styles.titleText}>Home</Text>
+	  <Text style={styles.baseText}>Add Plant</Text>
     </View>
   )
 }
