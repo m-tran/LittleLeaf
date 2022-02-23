@@ -12,7 +12,7 @@ const ConfirmScreen = () => {
   const navigation = useNavigation();
 
   const onConfirmPressed = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Dashboard');
   }
 
   const onSignInPressed = () => {

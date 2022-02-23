@@ -13,7 +13,7 @@ const NewPasswordScreen = () => {
   const navigation = useNavigation();
 
   const onForgotPasswordPressed = () => {
-    navigation.navigate('Home');  
+    navigation.navigate('Dashboard');  
   }
 
   const onSignInPressed = () => {

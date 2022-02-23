@@ -9,11 +9,11 @@ const Home = () => {
   const navigation = useNavigation();
 
   const onLoginPressed = () => {
-    navigation.navigate('SignInScreen');
+    navigation.navigate('SignIn');
   }
 
   const onSignUpPressed = () => {
-    navigation.navigate('SignUpScreen');
+    navigation.navigate('SignUp');
   }
 
   return (
