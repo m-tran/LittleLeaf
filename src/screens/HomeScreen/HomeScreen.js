@@ -1,43 +1,64 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image, useWindowDimensions, Dimensions } from 'react-native';
 import styles from '../../../LittleLeaf/styles.js';
+import icons from '../../../assets/icons/icons.js';
+import homeImage from '../../../assets/images/Home_4x.png';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
 
-  const navigation = useNavigation();
+	const navigation = useNavigation();
 
-  const onLoginPressed = () => {
-    navigation.navigate('SignIn');
-  }
+	const { height } = useWindowDimensions();
+	const { width } = Dimensions.get('window').width; 
 
-  const onSignUpPressed = () => {
-    navigation.navigate('SignUp');
-  }
+	const onLoginPressed = () => {
+		navigation.navigate('SignIn');
+	}
 
-  return (
-    <View
-      style={{
-        flex: 1,
-        marginTop: "25%",
-        marginLeft: "10%",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-      }}>
-      <Text style={styles.titleText}>Home</Text>
-	    <Text style={styles.baseText}>Add Plant</Text>
-      <CustomButton
-        text="Login"
-        onPress={onLoginPressed}
-        type="Tertiary"
-      />
-      <CustomButton
-        text="Signup"
-        onPress={onSignUpPressed}
-        type="Tertiary"
-      />
-    </View>
-  )
+	const onSignUpPressed = () => {
+		navigation.navigate('SignUp');
+	}
+
+	return (
+		<View
+			style={{ 
+				flex: 1,
+				backgroundColor: "#f6f6f6"
+			}}>
+			<View
+				style={{
+					paddingVertical: 50,
+					paddingHorizontal: 25,
+					justifyContent: "flex-start",
+					alignItems: "flex-start",
+				}}>
+				<Text style={styles.smallTitleText}>little leaf {icons.PLANT}</Text>
+				<Text style={styles.largeTitleText}>Easily keep track & care for your plants.</Text>
+			</View>
+			<Image
+				source={homeImage}
+				style={{
+					width: width,
+					height: height * 0.4,
+					justifyContent: "flex-end",
+					marginRight: -125,
+					marginTop: -25
+				}}
+				resizeMode="contain"
+			/>
+			<CustomButton
+				text="Login"
+				onPress={onLoginPressed}
+				type="Tertiary"
+			/>
+			<CustomButton
+				text="Signup"
+				onPress={onSignUpPressed}
+				type="Tertiary"
+			/>
+		</View>
+	)
 }
 export default Home;

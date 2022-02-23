@@ -5,20 +5,27 @@ export default StyleSheet.create({
 	baseText: {
 		fontFamily: "Inter-SemiBold"
 	},
-	titleText: {
+	largeTitleText: {
 		fontFamily: "LibreCaslonText-Bold",
 		fontSize: theme.FONT_SIZE_LARGE,
+		fontWeight: theme.FONT_WEIGHT_HEAVY,
+		paddingVertical: theme.PADDING_SMALL
+	},
+	mediumTitleText: {
+		fontFamily: "LibreCaslonText-Bold",
+		fontSize: theme.FONT_SIZE_MEDIUM,
+		fontWeight: theme.FONT_WEIGHT_HEAVY
+	},
+	smallTitleText: {
+		fontFamily: "LibreCaslonText-Bold",
+		fontSize: theme.FONT_SIZE_SMALL,
 		fontWeight: theme.FONT_WEIGHT_HEAVY
 	},
 	largeButtonText: {
 		fontSize: theme.FONT_SIZE_LARGE,
 		fontWeight: theme.FONT_WEIGHT_HEAVY
 	},
-	largeHeaderText: {
-		fontSize: theme.FONT_SIZE_LARGE
-	},
-	mediumHeaderText: {
-		fontSize: theme.FONT_SIZE_MEDIUM,
-		color: theme.PRIMARY_COLOR
+	background: {
+		backgroundColor: theme.BACKGROUND,
 	}
 });
