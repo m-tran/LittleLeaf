@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, Image, useWindowDimensions, Dimensions } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import styles from '../../../LittleLeaf/styles.js';
 import icons from '../../../assets/icons/icons.js';
 import homeImage from '../../../assets/images/Home_4x.png';
@@ -48,6 +50,9 @@ const Home = () => {
 				}}
 				resizeMode="contain"
 			/>
+			<View>
+				<FontAwesomeIcon icon={faGoogle} size={40} color={"blue"} />
+			</View>
 			<CustomButton
 				text="Login"
 				onPress={onLoginPressed}
