@@ -1,20 +1,23 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import styles from './LittleLeaf/styles.js';
+import {
+  SafeAreaView,
+  StyleSheet,
+} from 'react-native';
+
+import Navigation from './src/navigation';
 
 const App = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-		marginTop: "25%",
-		marginLeft: "10%",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-      }}>
-      <Text style={styles.titleText}>Home</Text>
-	  <Text style={styles.baseText}>Add Plant</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={styles.root}>
+      <Navigation />
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  root: {
+    flex: 1,
+    backgroundColor: '#F9FBFC',
+  }
+});
 export default App;
