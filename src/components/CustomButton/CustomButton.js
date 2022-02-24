@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Icon, Text, StyleSheet, Pressable } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
-const CustomButton = ({ onPress, icon, text, type = "Primary", bgColor, fgColor }) => {
+const CustomButton = ({ onPress, text, type = "Primary", bgColor, fgColor }) => {
 	return (
 		<Pressable
 			style={[
@@ -11,9 +11,6 @@ const CustomButton = ({ onPress, icon, text, type = "Primary", bgColor, fgColor 
 			]}
 			onPress={onPress}
 		>
-			{/* <Icon>
-				{icon}
-			</Icon> */}
 			<Text
 				style={[
 					styles.text,
