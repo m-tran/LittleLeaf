@@ -5,17 +5,35 @@ import CustomInput from '../../components/CustomInputs';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons';
 import { useNavigation } from '@react-navigation/native';
+import { Auth } from 'aws-amplify';
 
 const SignInScreen = () => {
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [loading, setLoading] = useState(false);
 
 	const { height } = useWindowDimensions();
 	const navigation = useNavigation();
 
-	const onSignInPressed = () => {
-		// validate user
-		navigation.navigate('Dashboard');
+	const onSignInPressed = async () => {		
+		if (loading) {
+			return;
+    }
+		
+    setLoading(true);
+		
+    try {
+			// validate user
+      await Auth.signIn(email, password);
+			navigation.navigate('Dashboard');
+      setUsername('')
+      setPassword('')
+    } catch (e) {
+      console.log(e)
+      Alert.alert('Oops', e.message);
+    }
+
+    setLoading(false);
 	}
 
 	const onForgotPasswordPressed = () => {
@@ -36,9 +54,9 @@ const SignInScreen = () => {
 				/>
 				<Text style={styles.title}>Sign In</Text>
 				<CustomInput
-					placeholder="Username"
-					value={username}
-					setValue={setUsername}
+					placeholder="Email"
+					value={email}
+					setValue={setEmail}
 				/>
 				<CustomInput
 					placeholder="Password"

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Text, View, Image, useWindowDimensions, Dimensions } from 'react-native';
+import { Text, View, Image, useWindowDimensions, Dimensions, Pressable } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 import styles from '../../../LittleLeaf/styles.js';
 import icons from '../../../assets/icons/icons.js';
 import homeImage from '../../../assets/images/Home_4x.png';
-import CustomButton from '../../components/CustomButton';
 import IconButtonRectangle from '../../components/IconButtonRectangle';
 import { useNavigation } from '@react-navigation/native';
 
@@ -80,32 +79,26 @@ const Home = () => {
 				/>
 				<IconButtonRectangle
 					text="Sign Up with Email"
-					onPress={onLoginPressed}
+					onPress={onSignUpPressed}
 					bgColor="#fff"
 					fgColor="#44A570"
 					shColor="#7BD194"
 					border="#44A570"
-				/>
-				<Text
-					style={{
-						margin: 10,
-						alignSelf: "center",
-						color: "#44A570"
-					}}
+				/>				
+				<Pressable
+					onPress={onLoginPressed}
 				>
-					Already have an account? Log in.
-				</Text>
+					<Text
+						style={{
+							margin: 10,
+							alignSelf: "center",
+							color: "#44A570"
+						}}
+					>
+						Already have an account? Log in.
+					</Text>
+				</Pressable>
 			</View>
-			{/* <CustomButton
-				text="Login"
-				onPress={onLoginPressed}
-				type="Tertiary"
-			/>
-			<CustomButton
-				text="Signup"
-				onPress={onSignUpPressed}
-				type="Tertiary"
-			/> */}
 		</View>
 	)
 }
