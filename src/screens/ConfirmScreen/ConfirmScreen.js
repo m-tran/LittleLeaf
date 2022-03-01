@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView, Alert } from 'react-native';
 import Logo from '../../../assets/images/Logo.png';
 import CustomInput from '../../components/CustomInputs';
 import CustomButton from '../../components/CustomButton';
@@ -36,7 +36,7 @@ const ConfirmScreen = () => {
     navigation.navigate('SignIn');
   }
 
-  const onResendPressed = async() => {
+  const onResendPressed = async () => {
     if (loading) {
       return;
     }
