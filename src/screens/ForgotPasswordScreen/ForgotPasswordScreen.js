@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView, Alert } from 'react-native';
 import Logo from '../../../assets/images/Logo.png';
 import CustomInput from '../../components/CustomInputs';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import { Auth } from 'aws-amplify';
 
 const ForgotPasswordScreen = () => {
-  const [username, setUsername] = useState('');
-  
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const { height } = useWindowDimensions();
   const navigation = useNavigation();
 
-  const onForgotPasswordPressed = () => {
-    navigation.navigate('NewPassword');
+  const onForgotPasswordPressed = async () => {
+    if (loading) {
+      return;
+    }
+    
+    setLoading(true);
+    
+    try {
+      const res = await Auth.forgotPassword(email)
+      console.log(res)
+      navigation.navigate('NewPassword', {email});
+      setUsername('')
+    } catch (e) {
+      Alert.alert('Oops', e.message);
+    }
+
+    setLoading(false);
   }
 
   const onSignInPressed = () => {
@@ -29,9 +46,9 @@ const ForgotPasswordScreen = () => {
         />
         <Text style={styles.title}>Forget Your Password</Text>
         <CustomInput 
-          placeholder="Username"
-          value={username}
-          setValue={setUsername}
+          placeholder="Email"
+          value={email}
+          setValue={setEmail}
         />
         <CustomButton
           text="Send"

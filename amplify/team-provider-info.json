@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-littleleaf-staging-180211-authRole",
+      "UnauthRoleArn": "arn:aws:iam::399981451141:role/amplify-littleleaf-staging-180211-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::399981451141:role/amplify-littleleaf-staging-180211-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-littleleaf-staging-180211-deployment",
+      "UnauthRoleName": "amplify-littleleaf-staging-180211-unauthRole",
+      "StackName": "amplify-littleleaf-staging-180211",
+      "StackId": "arn:aws:cloudformation:us-west-2:399981451141:stack/amplify-littleleaf-staging-180211/8df24390-98c0-11ec-82ee-064b6154519f",
+      "AmplifyAppId": "dvz5riuwnzgtn"
+    },
+    "categories": {
+      "auth": {
+        "LittleLeaf": {}
+      }
+    }
+  }
+}

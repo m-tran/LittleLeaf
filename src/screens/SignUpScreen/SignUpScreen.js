@@ -1,22 +1,49 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
+import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView, Alert } from 'react-native';
 import Logo from '../../../assets/images/Logo.png';
 import CustomInput from '../../components/CustomInputs';
 import CustomButton from '../../components/CustomButton';
 import SocialSignInButtons from '../../components/SocialSignInButtons';
 import { useNavigation } from '@react-navigation/native';
+import { Auth } from 'aws-amplify';
 
 const SignUpScreen = () => {
-  const [username, setUsername] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  
+  const [loading, setLoading] = useState(false);
+
   const { height } = useWindowDimensions();
   const navigation = useNavigation();
 
-  const onSignUpPressed = () => {
-    navigation.navigate('Confirm');
+  const onSignUpPressed = async () => {
+    if (loading) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await Auth.signUp({
+        username: email,
+        password,
+        attributes:{
+          email,
+          name, 
+        }
+      });
+      navigation.navigate('Confirm', {email});
+      setName('')
+      // setUsername('')
+      setEmail('')
+      setPassword('')
+      setPasswordConfirmation('')
+    } catch (e) {
+      Alert.alert('Oops', e.message);
+    }
+
+    setLoading(false);
   }
 
   const onSignInPressed = () => {
@@ -44,9 +71,9 @@ const SignUpScreen = () => {
         />
         <Text style={styles.title}>Create an Account</Text>
         <CustomInput 
-          placeholder="Username"
-          value={username}
-          setValue={setUsername}
+          placeholder="Name"
+          value={name}
+          setValue={setName}
         />
         <CustomInput 
           placeholder="Email"
