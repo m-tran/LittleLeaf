@@ -35,7 +35,6 @@ const SignUpScreen = () => {
       });
       navigation.navigate('Confirm', {email});
       setName('')
-      // setUsername('')
       setEmail('')
       setPassword('')
       setPasswordConfirmation('')

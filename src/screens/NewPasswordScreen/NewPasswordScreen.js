@@ -5,11 +5,14 @@ import CustomInput from '../../components/CustomInputs';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
 import { Auth } from 'aws-amplify';
+import { useRoute } from '@react-navigation/native';
 
 const NewPasswordScreen = () => {
   const [code, setCode] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  
+  const route = useRoute();
 
   const { height } = useWindowDimensions();
   const navigation = useNavigation();

@@ -3,15 +3,29 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from '
 import Logo from '../../../assets/images/Logo.png';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import { Auth } from 'aws-amplify';
 
 const DashboardScreen = () => {
-  
+  const [loading, setLoading] = useState(false);
+
   const { height } = useWindowDimensions();
   const navigation = useNavigation();
 
-  const onSignOutPressed = () => {
-    // signout
-    navigation.navigate('Home');
+  const onSignOutPressed = async () => {
+    if (loading) {
+      return;
+    }
+    
+    setLoading(true);
+    try {
+      const res = await Auth.signOut();
+      console.log(res)
+    } catch (e) {
+      console.log(e)
+      Alert.alert('Oops', e.message);
+    }
+    
+    setLoading(false); 
   }
 
   return (

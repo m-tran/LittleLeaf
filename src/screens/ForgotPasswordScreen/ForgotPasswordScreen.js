@@ -24,7 +24,7 @@ const ForgotPasswordScreen = () => {
       const res = await Auth.forgotPassword(email)
       console.log(res)
       navigation.navigate('NewPassword', {email});
-      setUsername('')
+      setEmail('')
     } catch (e) {
       Alert.alert('Oops', e.message);
     }

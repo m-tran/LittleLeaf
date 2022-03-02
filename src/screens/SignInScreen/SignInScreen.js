@@ -25,8 +25,8 @@ const SignInScreen = () => {
     try {
 			// validate user
       await Auth.signIn(email, password);
-			navigation.navigate('Dashboard');
-      setUsername('')
+			// navigation.navigate('Dashboard');
+      setEmail('')
       setPassword('')
     } catch (e) {
       console.log(e)

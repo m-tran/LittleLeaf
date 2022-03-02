@@ -4,11 +4,14 @@ import Logo from '../../../assets/images/Logo.png';
 import CustomInput from '../../components/CustomInputs';
 import CustomButton from '../../components/CustomButton';
 import { useNavigation } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { Auth } from 'aws-amplify';
 
 const ConfirmScreen = () => {
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const route = useRoute();
 
   const { height } = useWindowDimensions();
   const navigation = useNavigation();
@@ -44,8 +47,8 @@ const ConfirmScreen = () => {
     setLoading(true);
 
     try {
-      const email = route?.params?.email
-      await Auth.resendSignUp(email)
+      const username = route?.params?.email
+      await Auth.resendSignUp(username)
       Alert.alert('Success', 'Code was resent to your email');
       setCode('')
     } catch (e) {
